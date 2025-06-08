@@ -1,8 +1,12 @@
 # game/Makefile
 
 CC = gcc
-CFLAGS = -Wall -Wextra -I../collectionlib/include
-LDFLAGS = -Lcollectionlib/lib -lcollection -lsqlite3
+SDL_CFLAGS = $(shell sdl2-config --cflags)
+SDL_LDFLAGS = $(shell sdl2-config --libs) -lSDL2_ttf
+
+CFLAGS = -Wall -Wextra -I../collectionlib/include $(SDL_CFLAGS)
+LDFLAGS = -Lcollectionlib/lib -lcollection -lsqlite3 $(SDL_LDFLAGS)
+
 OBJDIR = build
 BINDIR = bin
 
