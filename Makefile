@@ -10,7 +10,7 @@ LDFLAGS = -Lcollectionlib/lib -lcollection -lsqlite3 $(SDL_LDFLAGS)
 OBJDIR = build
 BINDIR = bin
 
-SRC = src/main.c
+SRC = src/main.c src/hiragana.c
 OBJ = $(SRC:%.c=$(OBJDIR)/%.o)
 TARGET = $(BINDIR)/game
 
